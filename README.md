@@ -87,7 +87,7 @@ drop index idx_payment_date on payment;
 
 ![alt text](https://github.com/Artem-Tckachew/12-05-hw/blob/main/2.png)
 
-## анализ запроса без индекса
+## анализ запроса с индексом
 
 ![alt text](https://github.com/Artem-Tckachew/12-05-hw/blob/main/3.png)
 
