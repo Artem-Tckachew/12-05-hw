@@ -10,13 +10,9 @@
 
 ``` 
 
-SELECT 
-	TABLE_SCHEMA AS 'Название базы данных', 
-	SUM(INDEX_LENGTH) AS 'Общий размер индексов', 
-	SUM(DATA_LENGTH) AS 'Общий размер таблиц', 
-	ROUND((SUM(INDEX_LENGTH)/(SUM(DATA_LENGTH)+SUM(INDEX_LENGTH))*100), 1) AS 'Процентное отношение'
-FROM information_schema.TABLES
-WHERE TABLE_SCHEMA = 'sakila';
+select sum(data_length) as 'Общий размер таблиц', sum(index_length) as 'Общий размер индексов', sum(index_length)*100.0/sum(data_length) as 'Процентное отношение'
+from information_schema.tables
+where table_schema='sakila' and data_length is not null;
 
  ```
 
